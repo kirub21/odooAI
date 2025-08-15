@@ -1,0 +1,38 @@
+<odoo>
+    <record id="view_project_ai_automation_form" model="ir.ui.view">
+        <field name="name">project.ai.automation.form</field>
+        <field name="model">project.ai.automation</field>
+        <field name="arch" type="xml">
+            <form string="Project AI Automation">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="ai_model_endpoint"/>
+                    </group>
+                    <footer>
+                        <button name="test_ai_action" type="object" string="Test AI" class="btn-primary"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_project_ai_automation_tree" model="ir.ui.view">
+        <field name="name">project.ai.automation.tree</field>
+        <field name="model">project.ai.automation</field>
+        <field name="arch" type="xml">
+            <tree string="Project AI Automation">
+                <field name="name"/>
+                <field name="ai_model_endpoint"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_project_ai_automation_root" name="AI Automation"/>
+    <menuitem id="menu_project_ai_automation" name="Project AI Automation" parent="menu_project_ai_automation_root"/>
+    <act_window id="action_project_ai_automation"
+        name="Project AI Automations"
+        res_model="project.ai.automation"
+        view_mode="tree,form"
+        menu_id="menu_project_ai_automation"/>
+</odoo>
